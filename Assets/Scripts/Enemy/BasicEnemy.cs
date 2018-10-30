@@ -6,11 +6,13 @@ public class BasicEnemy : MonoBehaviour
 {
     public float speed;
     public int hp;
+	public int damage;
 
 	void Start()
 	{
 		speed = 1;
 		hp = 1;
+		damage = 1;
 	}
 
 	void Update ()
@@ -30,4 +32,14 @@ public class BasicEnemy : MonoBehaviour
             }
         }
     }
+
+	private void OnCollisionEnter2D(Collision2D coll)
+	{
+		if (coll.gameObject.tag == "Player")
+		{
+			coll.gameObject.GetComponent<PlayerMovement>().hp -= damage;
+
+			Destroy(gameObject);
+		}
+	}
 }

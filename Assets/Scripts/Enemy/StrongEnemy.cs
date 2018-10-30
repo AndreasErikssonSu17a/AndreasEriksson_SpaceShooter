@@ -8,5 +8,6 @@ public class StrongEnemy : BasicEnemy
 	{
 		speed = 2;
 		hp = 3;
+		damage = 2;
 	}
 }
