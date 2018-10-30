@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class BasicEnemy : MonoBehaviour
 {
-    public float Speed;
-    public int HP;
-	
+    public float speed;
+    public int hp;
+
+	void Start()
+	{
+		speed = 1;
+		hp = 1;
+	}
+
 	void Update ()
     {
-        transform.Translate(0, Speed * Time.deltaTime, 0);
+        transform.Translate(0, -speed * Time.deltaTime, 0);
 	}
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Laser")
         {
-            HP -= 1;
+            hp -= 1;
             
-            if(HP <= 0)
+            if(hp <= 0)
             {
                 Destroy(gameObject);
             }

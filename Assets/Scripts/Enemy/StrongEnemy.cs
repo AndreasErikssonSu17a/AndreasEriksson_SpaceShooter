@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class StrongEnemy : BasicEnemy
 {
-    
+	void Start()
+	{
+		speed = 2;
+		hp = 3;
+	}
 }
