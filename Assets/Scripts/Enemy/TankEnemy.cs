@@ -19,7 +19,7 @@ public class TankEnemy : BasicEnemy
 	{
 		if (coll.gameObject.tag == "Player")
 		{
-			Destroy(coll.gameObject);
+			coll.gameObject.GetComponent<PlayerHealth>().PlayerDeath();
 
 			Destroy(gameObject);
 		}

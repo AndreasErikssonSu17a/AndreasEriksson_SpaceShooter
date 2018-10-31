@@ -37,7 +37,7 @@ public class BasicEnemy : MonoBehaviour
 	{
 		if (coll.gameObject.tag == "Player")
 		{
-			coll.gameObject.GetComponent<PlayerMovement>().hp -= damage;
+			coll.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
 
 			Destroy(gameObject);
 		}
