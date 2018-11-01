@@ -7,12 +7,14 @@ public class BasicEnemy : MonoBehaviour
     public float speed;
     public int hp;
 	public int damage;
+	public int score;
 
 	void Start()
 	{
 		speed = 1;
 		hp = 1;
 		damage = 1;
+		score = 10;
 	}
 
 	void Update ()
@@ -28,6 +30,9 @@ public class BasicEnemy : MonoBehaviour
             
             if(hp <= 0)
             {
+				GameObject GM = GameObject.FindGameObjectWithTag("GameController");
+				GM.GetComponent<Score>().IncreaseScore(score);
+
                 Destroy(gameObject);
             }
         }

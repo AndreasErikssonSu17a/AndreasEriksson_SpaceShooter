@@ -8,6 +8,8 @@ public class TankEnemy : BasicEnemy
 	{
 		speed = 0.5f;
 		hp = 5;
+
+		score = 50;
 	}
 
 	void Update()
