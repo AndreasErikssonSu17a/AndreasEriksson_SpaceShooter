@@ -17,7 +17,7 @@ public class BasicEnemy : MonoBehaviour
 		score = 10;
 	}
 
-	void Update ()
+	void FixedUpdate ()
     {
         transform.Translate(0, -speed * Time.deltaTime, 0);
 	}

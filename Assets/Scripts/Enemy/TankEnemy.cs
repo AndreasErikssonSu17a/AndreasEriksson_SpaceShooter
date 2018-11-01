@@ -12,7 +12,7 @@ public class TankEnemy : BasicEnemy
 		score = 50;
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
 		transform.Translate(-speed * Time.deltaTime, 0, 0);
 	}

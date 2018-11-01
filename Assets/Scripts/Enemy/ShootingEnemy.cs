@@ -25,6 +25,8 @@ public class ShootingEnemy : BasicEnemy
 
 	private void FixedUpdate()
 	{
+		transform.Translate(0, -speed * Time.deltaTime, 0);
+
 		if (canShoot)
 		{
 			Shoot();
