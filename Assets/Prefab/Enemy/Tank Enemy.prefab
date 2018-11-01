@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114476921209784278}
   m_Layer: 0
   m_Name: Tank Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   speed: 0
   hp: 0
   damage: 0
+  score: 0
 --- !u!212 &212262926222854830
 SpriteRenderer:
   m_ObjectHideFlags: 1
