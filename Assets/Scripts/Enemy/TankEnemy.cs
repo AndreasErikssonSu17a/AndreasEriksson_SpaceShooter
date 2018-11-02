@@ -12,11 +12,6 @@ public class TankEnemy : BasicEnemy
 		score = 50;
 	}
 
-	void FixedUpdate()
-	{
-		transform.Translate(-speed * Time.deltaTime, 0, 0);
-	}
-
 	private void OnCollisionEnter2D(Collision2D coll)
 	{
 		if (coll.gameObject.tag == "Player")
