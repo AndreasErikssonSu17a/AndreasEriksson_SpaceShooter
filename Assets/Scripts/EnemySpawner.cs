@@ -39,23 +39,23 @@ public class EnemySpawner : MonoBehaviour
 		{
 			level = 1;
 		}
-		else if (score > 100 && score < 200)
+		else if (score < 200)
 		{
 			level = 2;
 		}
-		else if (score > 200 && score < 300)
+		else if (score < 300)
 		{
 			level = 3;
 		}
-		else if (score > 300 && score < 400)
+		else if (score < 400)
 		{
 			level = 4;
 		}
-		else if (score > 400 && score < 500)
+		else if (score < 500)
 		{
 			level = 5;
 		}
-		else if (score > 500 && score < 600)
+		else if (score < 600)
 		{
 			level = 6;
 		}
