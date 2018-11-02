@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DodgingEnemy : BasicEnemy
+public class DodgingEnemy : ShootingEnemy
 {
 	public float ySpeed;
 	public float yDelta = 1;
@@ -17,10 +17,14 @@ public class DodgingEnemy : BasicEnemy
 		hp = 1;
 		damage = 1;
 		score = 50;
-
 	}
 
 	void FixedUpdate()
+	{
+		MoveEnemy();
+	}
+
+	public void MoveEnemy()
 	{
 		ySpeed += yDelta * yDirection;
 
@@ -35,6 +39,5 @@ public class DodgingEnemy : BasicEnemy
 		}
 
 		transform.Translate(ySpeed * Time.deltaTime, -speed * Time.deltaTime, 0);
-
 	}
 }

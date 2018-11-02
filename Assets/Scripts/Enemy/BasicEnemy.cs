@@ -19,7 +19,7 @@ public class BasicEnemy : MonoBehaviour
 
 	void FixedUpdate ()
     {
-        transform.Translate(0, -speed * Time.deltaTime, 0);
+		transform.Translate(0, -speed * Time.deltaTime, 0);
 	}
 
     private void OnTriggerEnter2D(Collider2D coll)

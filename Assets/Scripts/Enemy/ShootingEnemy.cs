@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShootingEnemy : BasicEnemy
 {
 	public GameObject projectile;
-	private Rigidbody2D rbody2d;
+	protected Rigidbody2D rbody2d;
 	private GameObject clone;
 
 	public float fireSpeed;
@@ -45,7 +45,7 @@ public class ShootingEnemy : BasicEnemy
 		}
 	}
 
-	private void Shoot()
+	public void Shoot()
 	{
 		clone = (GameObject)Instantiate(projectile, rbody2d.transform.position, Quaternion.identity);
 		clone.transform.Rotate(Vector3.forward * 90f);
