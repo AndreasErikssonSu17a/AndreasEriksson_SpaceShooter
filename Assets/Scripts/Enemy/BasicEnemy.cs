@@ -36,14 +36,14 @@ public class BasicEnemy : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-    }
-
-	private void OnCollisionEnter2D(Collision2D coll)
-	{
-		if (coll.gameObject.tag == "Player")
+		else if (coll.gameObject.tag == "Player")
 		{
 			coll.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
 
+			Destroy(gameObject);
+		}
+		else if (coll.name == "Left Wall")
+		{
 			Destroy(gameObject);
 		}
 	}
