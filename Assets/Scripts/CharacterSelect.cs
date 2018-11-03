@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour
 {
 	public Sprite[] spaceships;
 
-	public int arrayPos;
+	public static int arrayPos;
+
+	private void Start()
+	{
+		gameObject.GetComponent<SpriteRenderer>().sprite = spaceships[arrayPos];
+	}
 
 	public void ButtonNextShip(bool isRight)
 	{
@@ -34,5 +40,10 @@ public class CharacterSelect : MonoBehaviour
 		}
 
 		gameObject.GetComponent<SpriteRenderer>().sprite = spaceships[arrayPos];
+	}
+
+	public void ButtonChoose()
+	{
+		SceneManager.LoadScene("MainMenu");
 	}
 }

@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 267239202}
   - component: {fileID: 267239201}
   - component: {fileID: 267239200}
+  - component: {fileID: 267239203}
   m_Layer: 5
   m_Name: Menu Button
   m_TagString: Untagged
@@ -313,6 +314,23 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 267239198}
   m_CullTransparentMesh: 0
+--- !u!114 &267239203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 267239198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ec7ddbe0a7bf242b99b6ba19b0a78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceships:
+  - {fileID: 21300000, guid: 2202b27ac3da27349a9ca50d1f76682c, type: 3}
+  - {fileID: 21300000, guid: 55fe01d47f845564d94374278b85c1a1, type: 3}
+  - {fileID: 21300000, guid: ca75f3bd1c57c8649b0fb90a0c1ffe83, type: 3}
+  - {fileID: 21300000, guid: 8df55366e0a68654bb5be45d18060e7c, type: 3}
+  button: {fileID: 267239200}
 --- !u!1 &300566349
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +375,7 @@ MonoBehaviour:
   - {fileID: 423091001}
   - {fileID: 639863562}
   - {fileID: 875123088}
+  gameStart: 0
 --- !u!4 &300566351
 Transform:
   m_ObjectHideFlags: 0
