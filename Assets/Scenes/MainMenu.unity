@@ -954,6 +954,7 @@ GameObject:
   - component: {fileID: 1128083881}
   - component: {fileID: 1128083880}
   - component: {fileID: 1128083879}
+  - component: {fileID: 1128083882}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1021,6 +1022,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1128083882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1128083878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c94085a0f8e0347a4098217bac2d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: e27b3a947bc0fe64d8f7f718b9a8f859, type: 3}
+  cursorMode: 1
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1525797524
 GameObject:
   m_ObjectHideFlags: 0

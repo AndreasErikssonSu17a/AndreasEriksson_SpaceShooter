@@ -116,6 +116,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7c2189869da834da5b09f98fe845be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hit1:
+  - {fileID: 21300000, guid: 1c7dd259c40809d4b81ef0f13ef841c6, type: 3}
+  - {fileID: 21300000, guid: 1f19a02adc8c120409f88c0c555f5735, type: 3}
+  - {fileID: 21300000, guid: 09beaf0a22192db488164269a0b65363, type: 3}
+  - {fileID: 21300000, guid: 09beaf0a22192db488164269a0b65363, type: 3}
+  hit2:
+  - {fileID: 21300000, guid: 78605812bbf2d2d41b45be1685abb114, type: 3}
+  - {fileID: 21300000, guid: 899f7791ce1fa814caa7584849bb3b51, type: 3}
+  - {fileID: 21300000, guid: 6865bb9d70b6d864385b5f309fd18395, type: 3}
+  - {fileID: 21300000, guid: 6865bb9d70b6d864385b5f309fd18395, type: 3}
+  explosionMark: {fileID: 1771938395573184, guid: 585be661d2f68494aa3c31149e060f51,
+    type: 2}
 --- !u!212 &212723441739049176
 SpriteRenderer:
   m_ObjectHideFlags: 1
