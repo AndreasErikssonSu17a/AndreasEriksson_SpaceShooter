@@ -9,6 +9,9 @@ public class BasicEnemy : MonoBehaviour
 	public int damage;
 	public int score;
 
+	protected Rigidbody2D rbody2d;
+	public GameObject xpPill;
+
 	public Sprite[] enemyShips;
 
 	void Start()
@@ -19,6 +22,8 @@ public class BasicEnemy : MonoBehaviour
 		hp = 1;
 		damage = 1;
 		score = 10;
+
+		rbody2d = GetComponent<Rigidbody2D>();
 	}
 
 	void FixedUpdate ()
@@ -37,6 +42,8 @@ public class BasicEnemy : MonoBehaviour
 				GameObject GM = GameObject.FindGameObjectWithTag("GameController");
 				GM.GetComponent<Score>().IncreaseScore(score);
 
+				XpDrop();
+
                 Destroy(gameObject);
             }
         }
@@ -49,6 +56,17 @@ public class BasicEnemy : MonoBehaviour
 		else if (coll.name == "Left Wall")
 		{
 			Destroy(gameObject);
+		}
+	}
+
+	public void XpDrop()
+	{
+		int rand = Random.Range(0, 100 + 1);
+
+		if (rand > 80)
+		{
+			GameObject clone = Instantiate(xpPill, rbody2d.position, Quaternion.identity);
+			clone.GetComponent<Rigidbody2D>().velocity = xpPill.transform.up * 5;
 		}
 	}
 

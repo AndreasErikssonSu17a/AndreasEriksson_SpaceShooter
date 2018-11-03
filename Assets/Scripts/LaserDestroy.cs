@@ -6,18 +6,21 @@ public class LaserDestroy : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag != "Player" && gameObject.tag == "Laser")
-        {
-            Destroy(gameObject);
-        }
-		else if (coll.tag != "Enemy" && gameObject.tag == "ELaser")
+		if (coll.tag != "XP")
 		{
-			if (coll.tag == "Player")
+			if (coll.tag != "Player" && gameObject.tag == "Laser")
 			{
-				coll.gameObject.GetComponent<PlayerHealth>().TakeDamage(1);
+				Destroy(gameObject);
 			}
+			else if (coll.tag != "Enemy" && gameObject.tag == "ELaser")
+			{
+				if (coll.tag == "Player")
+				{
+					coll.gameObject.GetComponent<PlayerHealth>().TakeDamage(1);
+				}
 
-			Destroy(gameObject);
+				Destroy(gameObject);
+			}
 		}
     }
 }

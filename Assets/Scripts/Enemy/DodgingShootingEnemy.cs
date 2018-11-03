@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class DodgingShootingEnemy : DodgingEnemy
 {
-	private bool canShoot;
-	private GameObject clone;
-
 	void Start()
 	{
 		ChangeShip();

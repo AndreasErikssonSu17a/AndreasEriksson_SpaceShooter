@@ -19,6 +19,8 @@ public class DodgingEnemy : ShootingEnemy
 		hp = 1;
 		damage = 1;
 		score = 50;
+
+		rbody2d = GetComponent<Rigidbody2D>();
 	}
 
 	void FixedUpdate()

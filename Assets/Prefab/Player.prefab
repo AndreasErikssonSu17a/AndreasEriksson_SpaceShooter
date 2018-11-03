@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 114137852270564118}
   - component: {fileID: 114172823729199026}
   - component: {fileID: 114248883788743592}
+  - component: {fileID: 114648453509452440}
+  - component: {fileID: 114110437041510536}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -39,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1773890354914622}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -6.86, y: -0.01, z: 0}
+  m_LocalPosition: {x: -6.9687433, y: -0.0014394894, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -90,6 +92,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.99, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &114110437041510536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1773890354914622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2441959f9512b5f4b8d2a2cfb244006c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLevel: 10
+  xpBar: {fileID: 0}
+  spaceships2:
+  - {fileID: 21300000, guid: 2458c7cb43f1fb04a848aa31d62794e8, type: 3}
+  - {fileID: 21300000, guid: ea05ebb187712104cb36ff3b1715a2af, type: 3}
+  - {fileID: 21300000, guid: c7d1680951a6c5942ac26858ac119d28, type: 3}
+  - {fileID: 21300000, guid: 8a312abc7e89ea840af2dc7bfc60d163, type: 3}
+  spaceships3:
+  - {fileID: 21300000, guid: 68e6b27b544ed8749b5a50b579a2894d, type: 3}
+  - {fileID: 21300000, guid: c3a20de5e89b75a4ab61ea635bd0c190, type: 3}
+  - {fileID: 21300000, guid: 400362a7a474bbb4fa55dbfe20fc90be, type: 3}
+  - {fileID: 21300000, guid: c3bc043808f5410459cb476942e7ab93, type: 3}
 --- !u!114 &114137852270564118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,6 +157,18 @@ MonoBehaviour:
   projectile: {fileID: 1725232852324150, guid: 590bcc913ed1e6342807a0e7c03ddc20, type: 2}
   fireSpeed: 10
   cooldown: 0.5
+--- !u!114 &114648453509452440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1773890354914622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63275366620a4443927c3314766fbd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
 --- !u!212 &212086092944072612
 SpriteRenderer:
   m_ObjectHideFlags: 1

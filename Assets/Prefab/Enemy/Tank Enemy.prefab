@@ -123,6 +123,8 @@ MonoBehaviour:
   hp: 0
   damage: 0
   score: 0
+  xpPill: {fileID: 1694411829547976, guid: f16a30e13a1be36408794367847e1a18, type: 2}
+  enemyShips: []
 --- !u!212 &212262926222854830
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -26,7 +26,7 @@ public class Score : MonoBehaviour
 	{
 		score += incScore;
 		
-		gameObject.GetComponentInChildren<EnemySpawner>().increaseLevel(score);
+		gameObject.GetComponentInChildren<EnemySpawner>().IncreaseLevel(score);
 
 		ParseScore(score, 0);
 	}

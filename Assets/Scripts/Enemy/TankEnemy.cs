@@ -10,6 +10,8 @@ public class TankEnemy : BasicEnemy
 		hp = 5;
 
 		score = 50;
+
+		rbody2d = GetComponent<Rigidbody2D>();
 	}
 
 	private void OnTriggerEnter2D(Collider2D coll)

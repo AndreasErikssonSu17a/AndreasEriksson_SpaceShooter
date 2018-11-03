@@ -33,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
 		}
 	}
 
-	public void increaseLevel(int score)
+	public void IncreaseLevel(int score)
 	{
 		if (score < 100)
 		{

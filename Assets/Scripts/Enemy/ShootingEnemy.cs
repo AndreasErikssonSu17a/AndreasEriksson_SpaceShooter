@@ -5,11 +5,10 @@ using UnityEngine;
 public class ShootingEnemy : BasicEnemy
 {
 	public GameObject projectile;
-	protected Rigidbody2D rbody2d;
-	private GameObject clone;
+	protected GameObject clone;
 
 	public float fireSpeed;
-	private bool canShoot;
+	protected bool canShoot;
 	public float cooldown;
 	private float waitTimer;
 
