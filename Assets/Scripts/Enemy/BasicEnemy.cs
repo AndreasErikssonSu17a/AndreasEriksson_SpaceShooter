@@ -9,8 +9,12 @@ public class BasicEnemy : MonoBehaviour
 	public int damage;
 	public int score;
 
+	public Sprite[] enemyShips;
+
 	void Start()
 	{
+		ChangeShip();
+
 		speed = 1;
 		hp = 1;
 		damage = 1;
@@ -46,5 +50,10 @@ public class BasicEnemy : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
+	}
+
+	public void ChangeShip()
+	{
+		gameObject.GetComponent<SpriteRenderer>().sprite = enemyShips[Random.Range(0, enemyShips.Length)];
 	}
 }

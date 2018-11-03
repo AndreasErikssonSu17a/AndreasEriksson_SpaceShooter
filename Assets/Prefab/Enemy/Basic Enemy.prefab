@@ -103,6 +103,11 @@ MonoBehaviour:
   hp: 0
   damage: 0
   score: 0
+  enemyShips:
+  - {fileID: 21300000, guid: d5bd5c25b35862841a2d90a4bb37c358, type: 3}
+  - {fileID: 21300000, guid: db5b7c2f34c404c45a3794833c825ab3, type: 3}
+  - {fileID: 21300000, guid: fef637a25c375f546bc6828ffda73cad, type: 3}
+  - {fileID: 21300000, guid: 4d2821944cd4f6c4fbe6a97c4744a3bd, type: 3}
 --- !u!212 &212196674658067590
 SpriteRenderer:
   m_ObjectHideFlags: 1

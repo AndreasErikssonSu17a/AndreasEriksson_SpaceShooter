@@ -6,6 +6,8 @@ public class StrongEnemy : BasicEnemy
 {
 	void Start()
 	{
+		ChangeShip();
+
 		speed = 2;
 		hp = 3;
 		damage = 2;

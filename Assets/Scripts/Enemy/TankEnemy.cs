@@ -12,12 +12,28 @@ public class TankEnemy : BasicEnemy
 		score = 50;
 	}
 
-	private void OnCollisionEnter2D(Collision2D coll)
+	private void OnTriggerEnter2D(Collider2D coll)
 	{
-		if (coll.gameObject.tag == "Player")
+		if (coll.gameObject.tag == "Laser")
+		{
+			hp -= 1;
+
+			if (hp <= 0)
+			{
+				GameObject GM = GameObject.FindGameObjectWithTag("GameController");
+				GM.GetComponent<Score>().IncreaseScore(score);
+
+				Destroy(gameObject);
+			}
+		}
+		else if (coll.gameObject.tag == "Player")
 		{
 			coll.gameObject.GetComponent<PlayerHealth>().PlayerDeath();
 
+			Destroy(gameObject);
+		}
+		else if (coll.name == "Left Wall")
+		{
 			Destroy(gameObject);
 		}
 	}

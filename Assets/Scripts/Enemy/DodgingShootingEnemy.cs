@@ -9,6 +9,8 @@ public class DodgingShootingEnemy : DodgingEnemy
 
 	void Start()
 	{
+		ChangeShip();
+
 		speed = 1;
 		hp = 1;
 		damage = 1;
