@@ -555,6 +555,7 @@ MonoBehaviour:
   - {fileID: 1998934232}
   - {fileID: 1951936494}
   - {fileID: 138569492}
+  gameStart: 1
 --- !u!4 &919118073
 Transform:
   m_ObjectHideFlags: 0

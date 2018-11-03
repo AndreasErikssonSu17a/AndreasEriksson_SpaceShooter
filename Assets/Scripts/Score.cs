@@ -8,11 +8,16 @@ public class Score : MonoBehaviour
 	public Sprite[] numeral;
 	public GameObject[] places;
 
-	private int score;
+	public static int score;
+
+	public bool gameStart;
 
 	private void Start()
 	{
-		score = 0;
+		if (gameStart)
+		{
+			score = 0;
+		}
 
 		ParseScore(score, 0);
 	}

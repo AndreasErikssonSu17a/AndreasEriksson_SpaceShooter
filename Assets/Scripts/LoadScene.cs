@@ -10,11 +10,6 @@ public class LoadScene : MonoBehaviour
 		SceneManager.LoadScene(name);
 	}
 
-	public void LoadSceneGameOver()
-	{
-		SceneManager.LoadScene("Game Over");
-	}
-
 	public void ExitGame()
 	{
 		Application.Quit();

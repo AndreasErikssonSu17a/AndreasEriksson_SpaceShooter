@@ -37,4 +37,9 @@ public class PlayerHealth : MonoBehaviour
 
 		healthbar.value = health;
 	}
+
+	public void OnDestroy()
+	{
+		UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+	}
 }
