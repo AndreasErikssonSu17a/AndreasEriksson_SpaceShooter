@@ -20,6 +20,8 @@ public class Score : MonoBehaviour
 		}
 
 		ParseScore(score, 0);
+
+		GameObject.FindGameObjectWithTag("Music").GetComponent<MenuMusicLoop>().StopMusic();
 	}
 
 	public void IncreaseScore(int incScore)

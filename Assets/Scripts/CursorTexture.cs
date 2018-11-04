@@ -11,5 +11,7 @@ public class CursorTexture : MonoBehaviour
 	private void Start()
 	{
 		Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+
+		GameObject.FindGameObjectWithTag("Music").GetComponent<MenuMusicLoop>().PlayMusic();
 	}
 }

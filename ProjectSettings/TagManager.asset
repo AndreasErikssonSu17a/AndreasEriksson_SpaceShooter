@@ -9,6 +9,7 @@ TagManager:
   - ELaser
   - XP
   - Sound Source
+  - Music
   layers:
   - Default
   - TransparentFX
