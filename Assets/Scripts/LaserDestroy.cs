@@ -42,11 +42,13 @@ public class LaserDestroy : MonoBehaviour
 	{
 		GameObject clone = Instantiate(explosionMark, rbody2D.position, Quaternion.identity);
 
+		clone.GetComponent<AudioSource>().Play();
+
 		float spd = enemy.gameObject.GetComponent<BasicEnemy>().speed;
 		clone.gameObject.GetComponent<Explosion>().speed = spd;
 
 		clone.GetComponent<SpriteRenderer>().sprite = hit1[CharacterSelect.arrayPos];
 
-		Destroy(clone, 0.5f);
+		Destroy(clone, 1f);
 	}
 }

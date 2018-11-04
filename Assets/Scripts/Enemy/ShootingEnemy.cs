@@ -48,6 +48,7 @@ public class ShootingEnemy : BasicEnemy
 
 	public void Shoot()
 	{
+		gameObject.GetComponent<AudioSource>().Play();
 		clone = (GameObject)Instantiate(projectile, rbody2d.transform.position, Quaternion.identity);
 		clone.transform.Rotate(Vector3.forward * 90f);
 		clone.GetComponent<Rigidbody2D>().velocity = projectile.transform.up * fireSpeed;

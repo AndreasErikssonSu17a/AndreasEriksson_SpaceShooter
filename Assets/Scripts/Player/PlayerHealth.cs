@@ -19,6 +19,9 @@ public class PlayerHealth : MonoBehaviour
 
 	public void TakeDamage(int damageValue)
 	{
+		GameObject GO = GameObject.FindGameObjectWithTag("Sound Source");
+		GO.GetComponent<AudioSource>().Play();
+
 		health -= damageValue;
 
 		healthbar.value = health;

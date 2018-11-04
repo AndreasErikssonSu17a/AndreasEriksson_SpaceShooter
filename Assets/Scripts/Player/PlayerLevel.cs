@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerLevel : MonoBehaviour
 {
-	private int playerXp;
+	public AudioClip sLevelUp;
 
+	private int playerXp;
 	public int maxLevel;
 
 	public Slider xpBar;
@@ -45,10 +46,14 @@ public class PlayerLevel : MonoBehaviour
 		if (playerXp == maxLevel/2)
 		{
 			gameObject.GetComponent<SpriteRenderer>().sprite = spaceships2[CharacterSelect.arrayPos];
+
+			gameObject.GetComponent<AudioSource>().Play();
 		}
 		else if (playerXp == maxLevel)
 		{
 			gameObject.GetComponent<SpriteRenderer>().sprite = spaceships3[CharacterSelect.arrayPos];
+
+			gameObject.GetComponent<AudioSource>().Play();
 		}
 	}
 }

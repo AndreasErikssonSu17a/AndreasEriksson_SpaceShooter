@@ -19,7 +19,7 @@ public class PlayerShooting : MonoBehaviour
 		rbody2d = GetComponent<Rigidbody2D>();
 	}
 	
-	void Update ()
+	void FixedUpdate ()
 	{
 		if (Input.GetButton("Fire1") && canShoot)
 		{
@@ -44,5 +44,6 @@ public class PlayerShooting : MonoBehaviour
         clone = (GameObject)Instantiate(projectile, rbody2d.transform.position, Quaternion.identity);
         clone.transform.Rotate(Vector3.forward * -90f);
         clone.GetComponent<Rigidbody2D>().velocity = projectile.transform.up * fireSpeed;
+		clone.GetComponent<AudioSource>().Play();
 	}
 }

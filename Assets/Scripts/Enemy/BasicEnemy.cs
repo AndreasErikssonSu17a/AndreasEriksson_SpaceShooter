@@ -44,7 +44,7 @@ public class BasicEnemy : MonoBehaviour
 
 				XpDrop();
 
-                Destroy(gameObject);
+				Destroy(gameObject);
             }
         }
 		else if (coll.gameObject.tag == "Player")
