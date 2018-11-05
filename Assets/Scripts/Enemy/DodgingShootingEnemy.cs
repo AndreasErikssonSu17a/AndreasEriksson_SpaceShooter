@@ -20,7 +20,7 @@ public class DodgingShootingEnemy : DodgingEnemy
 	{
 		MoveEnemy();
 
-		if (ySpeed > yMax || ySpeed < yMin)
+		if (ySpeed > yMax || ySpeed < yMin) //Skjuter när fienden är som högst och som lägst.
 		{
 			Shoot();
 		}

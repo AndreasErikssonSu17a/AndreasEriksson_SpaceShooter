@@ -6,8 +6,9 @@ public class StrongEnemy : BasicEnemy
 {
 	void Start()
 	{
-		ChangeShip();
+		ChangeShip();	//Eftersom jag har Start med så byts den ut i arv.
 
+		//Ändrar nedanstående variabler.
 		speed = 2;
 		hp = 3;
 		damage = 2;

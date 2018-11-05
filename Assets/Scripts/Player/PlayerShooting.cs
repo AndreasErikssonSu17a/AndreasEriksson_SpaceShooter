@@ -10,6 +10,7 @@ public class PlayerShooting : MonoBehaviour
 
     public float fireSpeed;
 
+	//Cooldown variabler.
     public float cooldown;
     private bool canShoot;
     private float waitTimer;
@@ -44,6 +45,7 @@ public class PlayerShooting : MonoBehaviour
         clone = (GameObject)Instantiate(projectile, rbody2d.transform.position, Quaternion.identity);
         clone.transform.Rotate(Vector3.forward * -90f);
         clone.GetComponent<Rigidbody2D>().velocity = projectile.transform.up * fireSpeed;
+
 		clone.GetComponent<AudioSource>().Play();
 	}
 }

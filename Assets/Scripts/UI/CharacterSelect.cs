@@ -14,9 +14,9 @@ public class CharacterSelect : MonoBehaviour
 		gameObject.GetComponent<SpriteRenderer>().sprite = spaceships[arrayPos];
 	}
 
-	public void ButtonNextShip(bool isRight)
+	public void ButtonNextShip(bool isRight)	//Knapparna i val menyn.
 	{
-		if (isRight)
+		if (isRight) //höger.
 		{
 			if (arrayPos == spaceships.Length - 1)
 			{
@@ -27,7 +27,7 @@ public class CharacterSelect : MonoBehaviour
 				arrayPos++;
 			}
 		}
-		else
+		else //vänster (ändast else för att knapparna som kallar på funktionen antingen är höger eller vänster)
 		{
 			if (arrayPos == 0)
 			{

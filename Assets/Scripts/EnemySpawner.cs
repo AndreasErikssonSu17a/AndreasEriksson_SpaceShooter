@@ -8,14 +8,14 @@ public class EnemySpawner : MonoBehaviour
 
 	public int level;
 
-	public float spawnRate;
+	public float spawnRate;		//Ifall jag skulle vilja ändra hur snabbt fienderna ska spawna.
 	public float cooldown;
 
 	private Rigidbody2D rbody2D;
 
 	private void Start()
 	{
-		spawnRate = 60f;
+		spawnRate = 60f;		//1 fiende i sekunden.
 
 		rbody2D = GetComponent<Rigidbody2D>();
 	}
@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
 		if (cooldown <= 0)
 		{
 			Instantiate(enemies[Random.Range(0, level)], new Vector2(rbody2D.position.x, rbody2D.position.y + Random.Range(3f, -2f)), Quaternion.Euler(0,0,-90f));
-			cooldown = 60f / spawnRate;
+			cooldown = 60f / spawnRate;		//60 / 60 = 1
 		}
 		else
 		{
@@ -43,19 +43,19 @@ public class EnemySpawner : MonoBehaviour
 		{
 			level = 2;
 		}
-		else if (score < 300)
+		else if (score < 400)
 		{
 			level = 3;
 		}
-		else if (score < 400)
+		else if (score < 600)
 		{
 			level = 4;
 		}
-		else if (score < 500)
+		else if (score < 800)
 		{
 			level = 5;
 		}
-		else if (score < 600)
+		else if (score < 1000)
 		{
 			level = 6;
 		}

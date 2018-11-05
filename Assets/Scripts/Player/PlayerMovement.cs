@@ -6,7 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
 	public float speed;
     
-	void Update ()
+	//Väldigt simpelt movement.
+	void FixedUpdate ()
 	{
 		float moveY = Input.GetAxis("Vertical") * Time.deltaTime * speed;
 

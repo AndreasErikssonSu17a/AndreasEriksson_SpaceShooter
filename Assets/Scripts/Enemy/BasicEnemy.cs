@@ -9,7 +9,7 @@ public class BasicEnemy : MonoBehaviour
 	public int damage;
 	public int score;
 
-	protected Rigidbody2D rbody2d;
+	protected Rigidbody2D rbody2d;		//Är protected för att den ska vara åtkommlig i arv, men vill inte ha den public i Unity.
 	public GameObject xpPill;
 
 	public Sprite[] enemyShips;
@@ -28,7 +28,7 @@ public class BasicEnemy : MonoBehaviour
 
 	void FixedUpdate ()
     {
-		transform.Translate(0, -speed * Time.deltaTime, 0);
+		transform.Translate(0, -speed * Time.deltaTime, 0);		//Movement.
 	}
 
     private void OnTriggerEnter2D(Collider2D coll)
@@ -40,7 +40,7 @@ public class BasicEnemy : MonoBehaviour
             if(hp <= 0)
             {
 				GameObject GM = GameObject.FindGameObjectWithTag("GameController");
-				GM.GetComponent<Score>().IncreaseScore(score);
+				GM.GetComponent<Score>().IncreaseScore(score);						//Ökar score.
 
 				XpDrop();
 
@@ -53,7 +53,7 @@ public class BasicEnemy : MonoBehaviour
 
 			Destroy(gameObject);
 		}
-		else if (coll.name == "Left Wall")
+		else if (coll.name == "Left Wall")		//Ifall fienden inte colliderar med något viktigt (Spelaren eller Spelarskotten).
 		{
 			Destroy(gameObject);
 		}
@@ -63,14 +63,14 @@ public class BasicEnemy : MonoBehaviour
 	{
 		int rand = Random.Range(0, 100 + 1);
 
-		if (rand > 80)
+		if (rand > 80)	//20%
 		{
-			GameObject clone = Instantiate(xpPill, rbody2d.position, Quaternion.identity);
+			GameObject clone = Instantiate(xpPill, rbody2d.position, Quaternion.identity);	//Namnet clone är bara för att jag inte kommer på något annat vettigt.
 			clone.GetComponent<Rigidbody2D>().velocity = xpPill.transform.up * 5;
 		}
 	}
 
-	public void ChangeShip()
+	public void ChangeShip() //Byter utseendet på fienden.
 	{
 		gameObject.GetComponent<SpriteRenderer>().sprite = enemyShips[Random.Range(0, enemyShips.Length)];
 	}

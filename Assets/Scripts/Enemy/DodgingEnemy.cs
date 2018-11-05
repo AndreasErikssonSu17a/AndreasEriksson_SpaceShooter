@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DodgingEnemy : ShootingEnemy
+public class DodgingEnemy : ShootingEnemy	//Ärver från SE för att DSE ska ärva egenskaper från både SE och DE.
 {
 	public float ySpeed;
 	public float yDelta = 1;
@@ -28,6 +28,7 @@ public class DodgingEnemy : ShootingEnemy
 		MoveEnemy();
 	}
 
+	//Är en egen function för att det ska bli lättare i nästa class.
 	public void MoveEnemy()
 	{
 		ySpeed += yDelta * yDirection;

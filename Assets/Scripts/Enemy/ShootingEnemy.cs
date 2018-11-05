@@ -26,8 +26,9 @@ public class ShootingEnemy : BasicEnemy
 
 	private void FixedUpdate()
 	{
-		transform.Translate(0, -speed * Time.deltaTime, 0);
+		transform.Translate(0, -speed * Time.deltaTime, 0);		//Movement.
 
+		//Väldigt likt spelarens skjutscript.
 		if (canShoot)
 		{
 			Shoot();
@@ -49,6 +50,7 @@ public class ShootingEnemy : BasicEnemy
 	public void Shoot()
 	{
 		gameObject.GetComponent<AudioSource>().Play();
+
 		clone = (GameObject)Instantiate(projectile, rbody2d.transform.position, Quaternion.identity);
 		clone.transform.Rotate(Vector3.forward * 90f);
 		clone.GetComponent<Rigidbody2D>().velocity = projectile.transform.up * fireSpeed;

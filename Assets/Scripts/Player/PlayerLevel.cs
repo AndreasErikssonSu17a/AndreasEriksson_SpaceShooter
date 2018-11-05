@@ -5,15 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerLevel : MonoBehaviour
 {
-	public AudioClip sLevelUp;
-
 	private int playerXp;
 	public int maxLevel;
 
 	public Slider xpBar;
 
-	public Sprite[] spaceships2;
-	public Sprite[] spaceships3;
+	public Sprite[] spaceships2;	//Eftersom jag har med att man kan välja färg på skeppet så...
+	public Sprite[] spaceships3;	//... behäver jag två arrayer för färgena för båda "uppgraderingarna".
 
 	void Start()
 	{
@@ -43,7 +41,7 @@ public class PlayerLevel : MonoBehaviour
 
 	private void UpgradeShip()
 	{
-		if (playerXp == maxLevel/2)
+		if (playerXp == maxLevel/2)		//Byter till det andra skeppet vid hälften av max level.
 		{
 			gameObject.GetComponent<SpriteRenderer>().sprite = spaceships2[CharacterSelect.arrayPos];
 

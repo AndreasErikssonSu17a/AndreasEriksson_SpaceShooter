@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
 	public void TakeDamage(int damageValue)
 	{
 		GameObject GO = GameObject.FindGameObjectWithTag("Sound Source");
-		GO.GetComponent<AudioSource>().Play();
+		GO.GetComponent<AudioSource>().Play();								//Letar reda på ett specifikt gameobject som har en AudioSource.
 
 		health -= damageValue;
 

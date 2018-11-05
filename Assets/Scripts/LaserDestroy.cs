@@ -15,9 +15,9 @@ public class LaserDestroy : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D coll)
     {
-		if (coll.tag != "XP")
+		if (coll.tag != "XP")		//Lasern kan inte träffa XP.
 		{
-			if (coll.tag != "Player" && gameObject.tag == "Laser")
+			if (coll.tag != "Player" && gameObject.tag == "Laser")		//Om det är spalarens laser kan den inte träffa spelaren.
 			{
 				if (coll.tag == "Enemy")
 				{
@@ -26,7 +26,7 @@ public class LaserDestroy : MonoBehaviour
 
 				Destroy(gameObject);
 			}
-			else if (coll.tag != "Enemy" && gameObject.tag == "ELaser")
+			else if (coll.tag != "Enemy" && gameObject.tag == "ELaser")	//Om det är fiendens laser kan den inte träffa fiender.
 			{
 				if (coll.tag == "Player")
 				{
@@ -45,7 +45,7 @@ public class LaserDestroy : MonoBehaviour
 		clone.GetComponent<AudioSource>().Play();
 
 		float spd = enemy.gameObject.GetComponent<BasicEnemy>().speed;
-		clone.gameObject.GetComponent<Explosion>().speed = spd;
+		clone.gameObject.GetComponent<Explosion>().speed = spd;			//Ändrar hastigheten till explosionen till att matcha fienden.
 
 		clone.GetComponent<SpriteRenderer>().sprite = hit1[CharacterSelect.arrayPos];
 
