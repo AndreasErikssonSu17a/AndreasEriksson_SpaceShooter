@@ -24,7 +24,10 @@ public class EnemySpawner : MonoBehaviour
 	{
 		if (cooldown <= 0)
 		{
-			Instantiate(enemies[Random.Range(0, level)], new Vector2(rbody2D.position.x, rbody2D.position.y + Random.Range(3f, -2f)), Quaternion.Euler(0,0,-90f));
+			GameObject enemyPrefab = enemies[Random.Range(0, level)];
+			float maxSpawnPoint = enemyPrefab.GetComponent<BasicEnemy>().maxSpawnPoint;
+			float minSpawnPoint = enemyPrefab.GetComponent<BasicEnemy>().minSpawnPoint;
+			Instantiate(enemyPrefab, new Vector2(rbody2D.position.x, rbody2D.position.y + Random.Range(maxSpawnPoint, minSpawnPoint)), Quaternion.Euler(0,0,-90f));
 			cooldown = 60f / spawnRate;		//60 / 60 = 1
 		}
 		else

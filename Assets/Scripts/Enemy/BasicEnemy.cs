@@ -9,6 +9,9 @@ public class BasicEnemy : MonoBehaviour
 	public int damage;
 	public int score;
 
+	public float maxSpawnPoint;
+	public float minSpawnPoint;
+
 	protected Rigidbody2D rbody2d;		//Är protected för att den ska vara åtkommlig i arv, men vill inte ha den public i Unity.
 	public GameObject xpPill;
 
