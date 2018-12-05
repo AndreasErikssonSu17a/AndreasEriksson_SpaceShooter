@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootingEnemy : BasicEnemy
+public class ShootingEnemy : MonoBehaviour
 {
-	public GameObject projectile;
+    private Rigidbody2D rbody2d;
+    public GameObject projectile;
 	protected GameObject clone;
 
 	public float fireSpeed;
@@ -12,47 +13,49 @@ public class ShootingEnemy : BasicEnemy
 	public float cooldown;
 	private float waitTimer;
 
-	void Start()
+    protected float direction;
+
+    private void Awake()
+    {
+        rbody2d = GetComponent<Rigidbody2D>();
+    }
+    protected virtual void Start()
+    {
+        direction = 90f;
+    }
+
+    protected virtual void FixedUpdate()
 	{
-		ChangeShip();
-
-		speed = 1;
-		hp = 1;
-		damage = 1;
-		score = 30;
-
-		rbody2d = GetComponent<Rigidbody2D>();
-	}
-
-	private void FixedUpdate()
-	{
-		transform.Translate(0, -speed * Time.deltaTime, 0);		//Movement.
-
-		//Väldigt likt spelarens skjutscript.
 		if (canShoot)
 		{
 			Shoot();
 			canShoot = false;
 		}
 
-		if (canShoot == false)
-		{
-			waitTimer += Time.deltaTime;
-
-			if (waitTimer >= cooldown)
-			{
-				canShoot = true;
-				waitTimer = 0f;
-			}
-		}
+        
+        Cooldown();
 	}
+
+    protected void Cooldown()
+    {
+        if (canShoot == false)
+        {
+            waitTimer += Time.deltaTime;
+
+            if (waitTimer >= cooldown)
+            {
+                canShoot = true;
+                waitTimer = 0f;
+            }
+        }
+    }
 
 	public void Shoot()
 	{
-		gameObject.GetComponent<AudioSource>().Play();
-
 		clone = (GameObject)Instantiate(projectile, rbody2d.transform.position, Quaternion.identity);
-		clone.transform.Rotate(Vector3.forward * 90f);
+		clone.transform.Rotate(Vector3.forward * direction);
 		clone.GetComponent<Rigidbody2D>().velocity = projectile.transform.up * fireSpeed;
-	}
+
+        clone.GetComponent<AudioSource>().Play();
+    }
 }

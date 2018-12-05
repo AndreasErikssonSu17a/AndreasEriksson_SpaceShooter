@@ -199,7 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2441959f9512b5f4b8d2a2cfb244006c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sLevelUp: {fileID: 0}
   maxLevel: 10
   xpBar: {fileID: 0}
   spaceships2:

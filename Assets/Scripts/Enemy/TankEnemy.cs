@@ -13,15 +13,7 @@ public class TankEnemy : BasicEnemy
 	{
 		if (coll.gameObject.tag == "Laser")
 		{
-			hp -= 1;
-
-			if (hp <= 0)
-			{
-				GameObject GM = GameObject.FindGameObjectWithTag("GameController");
-				GM.GetComponent<Score>().IncreaseScore(score);
-
-				Destroy(gameObject);
-			}
+            TakeDMG();
 		}
 		else if (coll.gameObject.tag == "Player")
 		{

@@ -27,26 +27,21 @@ public class BasicEnemy : MonoBehaviour
 		ChangeShip();
 	}
 
-	void FixedUpdate ()
+	protected virtual void FixedUpdate ()
     {
-		transform.Translate(0, -speed * Time.deltaTime, 0);		//Movement.
+        Movement();
 	}
+
+    protected void Movement()
+    {
+        transform.Translate(0, -speed * Time.deltaTime, 0);
+    }
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Laser")
         {
-            hp -= 1;
-            
-            if(hp <= 0)
-            {
-				GameObject GM = GameObject.FindGameObjectWithTag("GameController");
-				GM.GetComponent<Score>().IncreaseScore(score);						//Ökar score.
-
-				XpDrop();
-
-				Destroy(gameObject);
-            }
+            TakeDMG();
         }
 		else if (coll.gameObject.tag == "Player")
 		{
@@ -59,6 +54,21 @@ public class BasicEnemy : MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
+
+    protected void TakeDMG()
+    {
+        hp -= 1;
+
+        if (hp <= 0)
+        {
+            GameObject GM = GameObject.FindGameObjectWithTag("GameController");
+            GM.GetComponent<Score>().IncreaseScore(score);                      //Ökar score.
+
+            XpDrop();
+
+            Destroy(gameObject);
+        }
+    }
 
 	public void XpDrop()
 	{

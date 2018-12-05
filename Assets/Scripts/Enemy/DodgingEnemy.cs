@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DodgingEnemy : ShootingEnemy	//Ärver från SE för att DSE ska ärva egenskaper från både SE och DE.
+public class DodgingEnemy : BasicEnemy
 {
 	public float ySpeed;
 	public float yDelta = 1;
@@ -11,25 +11,12 @@ public class DodgingEnemy : ShootingEnemy	//Ärver från SE för att DSE ska är
 
 	private int yDirection = 1;
 
-	void Start()
-	{
-		ChangeShip();
-
-		speed = 1;
-		hp = 1;
-		damage = 1;
-		score = 50;
-
-		rbody2d = GetComponent<Rigidbody2D>();
-	}
-
-	void FixedUpdate()
-	{
-		MoveEnemy();
-	}
-
-	//Är en egen function för att det ska bli lättare i nästa class.
-	public void MoveEnemy()
+    protected override void FixedUpdate()
+    {
+        MoveEnemy();
+    }
+    
+    public void MoveEnemy()
 	{
 		ySpeed += yDelta * yDirection;
 
