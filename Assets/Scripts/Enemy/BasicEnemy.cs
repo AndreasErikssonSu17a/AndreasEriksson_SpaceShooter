@@ -17,16 +17,14 @@ public class BasicEnemy : MonoBehaviour
 
 	public Sprite[] enemyShips;
 
-	void Start()
+    protected void Awake()
+    {
+        rbody2d = GetComponent<Rigidbody2D>();
+    }
+
+    protected virtual void Start()
 	{
 		ChangeShip();
-
-		speed = 1;
-		hp = 1;
-		damage = 1;
-		score = 10;
-
-		rbody2d = GetComponent<Rigidbody2D>();
 	}
 
 	void FixedUpdate ()

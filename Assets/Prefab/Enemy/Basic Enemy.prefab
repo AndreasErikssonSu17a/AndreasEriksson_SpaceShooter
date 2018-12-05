@@ -195,10 +195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986b249ad9e1c6648b39d050bc9efe3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  hp: 0
-  damage: 0
-  score: 0
+  speed: 1
+  hp: 1
+  damage: 1
+  score: 10
   maxSpawnPoint: 3
   minSpawnPoint: -2
   xpPill: {fileID: 1694411829547976, guid: f16a30e13a1be36408794367847e1a18, type: 2}

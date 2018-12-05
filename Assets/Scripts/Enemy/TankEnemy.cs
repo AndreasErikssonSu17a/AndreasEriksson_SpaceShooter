@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class TankEnemy : BasicEnemy
 {
-	void Start()
-	{
-		speed = 0.5f;
-		hp = 5;
-							//Saknar ChangeShip och damage för att denna fiende inte har mer än en sprite och damage behövs inte.
-		score = 50;
+    protected override void Start()
+    {
+        
+    }
 
-		rbody2d = GetComponent<Rigidbody2D>();
-	}
-
-	private void OnTriggerEnter2D(Collider2D coll) //OnTriggerEnter2D skrivs över så det är mycket som är likt här.
+    private void OnTriggerEnter2D(Collider2D coll) //OnTriggerEnter2D skrivs över så det är mycket som är likt här.
 	{
 		if (coll.gameObject.tag == "Laser")
 		{
