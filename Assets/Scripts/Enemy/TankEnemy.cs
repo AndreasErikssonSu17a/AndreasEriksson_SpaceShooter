@@ -9,20 +9,14 @@ public class TankEnemy : BasicEnemy
         
     }
 
-    private void OnTriggerEnter2D(Collider2D coll) //OnTriggerEnter2D skrivs över så det är mycket som är likt här.
+	protected override void OnTriggerEnter2D(Collider2D coll)
 	{
-		if (coll.gameObject.tag == "Laser")
-		{
-            TakeDMG();
-		}
-		else if (coll.gameObject.tag == "Player")
-		{
-			coll.gameObject.GetComponent<PlayerHealth>().PlayerDeath();		//Skillnad.
+		base.OnTriggerEnter2D(coll);
 
-			Destroy(gameObject);
-		}
-		else if (coll.name == "Left Wall")
+		if (coll.gameObject.tag == "Player")
 		{
+			coll.gameObject.GetComponent<PlayerHealth>().PlayerDeath();
+
 			Destroy(gameObject);
 		}
 	}

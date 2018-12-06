@@ -37,12 +37,22 @@ public class BasicEnemy : MonoBehaviour
         transform.Translate(0, -speed * Time.deltaTime, 0);
     }
 
-    private void OnTriggerEnter2D(Collider2D coll)
+    protected virtual void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Laser")
         {
-            TakeDMG();
-        }
+			hp -= 1;
+
+			if (hp <= 0)
+			{
+				GameObject GM = GameObject.FindGameObjectWithTag("GameController");
+				GM.GetComponent<Score>().IncreaseScore(score);                      //Ökar score.
+
+				XpDrop();
+
+				Destroy(gameObject);
+			}
+		}
 		else if (coll.gameObject.tag == "Player")
 		{
 			coll.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
@@ -55,33 +65,18 @@ public class BasicEnemy : MonoBehaviour
 		}
 	}
 
-    protected void TakeDMG()
-    {
-        hp -= 1;
-
-        if (hp <= 0)
-        {
-            GameObject GM = GameObject.FindGameObjectWithTag("GameController");
-            GM.GetComponent<Score>().IncreaseScore(score);                      //Ökar score.
-
-            XpDrop();
-
-            Destroy(gameObject);
-        }
-    }
-
-	public void XpDrop()
+	protected void XpDrop()
 	{
 		int rand = Random.Range(0, 100 + 1);
 
-		if (rand > 80)	//20%
+		if (rand >= 80)	//20%
 		{
 			GameObject clone = Instantiate(xpPill, rbody2d.position, Quaternion.identity);	//Namnet clone är bara för att jag inte kommer på något annat vettigt.
 			clone.GetComponent<Rigidbody2D>().velocity = xpPill.transform.up * 5;
 		}
 	}
 
-	public void ChangeShip() //Byter utseendet på fienden.
+	protected void ChangeShip() //Byter utseendet på fienden.
 	{
 		gameObject.GetComponent<SpriteRenderer>().sprite = enemyShips[Random.Range(0, enemyShips.Length)];
 	}
