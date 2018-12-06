@@ -8,7 +8,7 @@ public class ButtonSprites : CharacterSelect	//Är väldigt likt CS fast är til
 	public Button button;
 
 	//Byter knapparna till den färg spelaren valt till skeppet.
-	void Start()
+	protected override void Start()
 	{
 		button.GetComponent<Image>().sprite = spaceships[arrayPos];
 	}

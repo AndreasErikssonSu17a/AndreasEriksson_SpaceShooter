@@ -9,7 +9,7 @@ public class CharacterSelect : MonoBehaviour
 
 	public static int arrayPos;
 
-	private void Start()
+	protected virtual void Start()
 	{
 		gameObject.GetComponent<SpriteRenderer>().sprite = spaceships[arrayPos];
 	}

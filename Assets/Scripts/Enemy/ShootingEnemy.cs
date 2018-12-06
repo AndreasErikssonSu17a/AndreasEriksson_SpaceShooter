@@ -26,12 +26,8 @@ public class ShootingEnemy : MonoBehaviour
 
     protected virtual void FixedUpdate()
 	{
-		if (canShoot)
-		{
-			Shoot();
-			canShoot = false;
-		}
-        
+		Shoot();
+  
         Cooldown();
 	}
 
@@ -51,10 +47,15 @@ public class ShootingEnemy : MonoBehaviour
 
 	public void Shoot()
 	{
-		clone = (GameObject)Instantiate(projectile, rbody2d.transform.position, Quaternion.identity);
-		clone.transform.Rotate(Vector3.forward * direction);
-		clone.GetComponent<Rigidbody2D>().velocity = projectile.transform.up * fireSpeed;
+		if (canShoot)
+		{
+			canShoot = false;
 
-        clone.GetComponent<AudioSource>().Play();
+			clone = (GameObject)Instantiate(projectile, rbody2d.transform.position, Quaternion.identity);
+			clone.transform.Rotate(Vector3.forward * direction);
+			clone.GetComponent<Rigidbody2D>().velocity = projectile.transform.up * fireSpeed;
+
+			clone.GetComponent<AudioSource>().Play();
+		}
     }
 }

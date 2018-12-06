@@ -4,21 +4,18 @@ using UnityEngine;
 
 public class PlayerShooting : ShootingEnemy
 {
-    protected override void Start()
-    {
-        direction = -90f;
-    }
+	protected override void Start()
+	{
+		direction = -90f;
+	}
 
-    protected override void FixedUpdate()
-    {
-        if (Input.GetButton("Fire1"))
-        {
-            base.FixedUpdate();
-        }
+	protected override void FixedUpdate()
+	{
+		if (Input.GetButton("Fire1"))
+		{
+			Shoot();
+		}
 
-        if (canShoot == false)
-        {
-            Cooldown();
-        }
-    }
+		Cooldown();
+	}
 }
